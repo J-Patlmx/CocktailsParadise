@@ -1,0 +1,582 @@
+ :root {
+  --ecriture: gold;
+
+  --background-color: black;
+}  
+
+body {
+   background: var(--background-color); 
+  /* background-color: black; */
+}
+ .changement {
+  border: 2px solid grey;
+  color:var(--ecriture);
+  width: 8vw;
+  margin-left: 2%;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+button {
+  -webkit-border-radius: 38;
+  -moz-border-radius: 38;
+  border-radius: 38px;
+  -webkit-box-shadow: 0px 1px 7px gold;
+  -moz-box-shadow: 0px 1px 7px gold;
+  box-shadow: 0px 1px 7px gold;
+  color: gold;
+  font-size: 20px;
+  background: black;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #5e5202;
+  text-decoration: none;
+}
+
+
+/*.........MENU...............*/
+.navigationCheckbox {
+  display: none;
+}
+
+.navigationBg {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 4rem;
+  right: 6rem;
+  background-color: var(--background-color);
+  /* background-image: radial-gradient(red, black); */
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+
+.navigationBtn {
+  background-color: black;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 4rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 0rem 30rem black;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.navigationIcon {
+  position: relative;
+  margin-top: 3.5rem;
+  width: 3rem;
+  height: 2px;
+  background-color: green;
+  display: inline-block;
+}
+
+.navigationIcon::before,
+.navigationIcon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: gold;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all .2s;
+}
+
+.navigationIcon::before {
+  top: -.8rem;
+}
+
+.navigationIcon::after {
+  top: .8rem;
+}
+
+
+.nav {
+  height: 100vh;
+  position: fixed;
+  opacity: 0;
+  width: 0;
+  z-index: 1500;
+  transition: width 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.navigationListe {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+  display: none;
+}
+
+
+.liens {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 2rem;
+  font-weight: 100;
+  color: gold;
+  text-decoration: none;
+
+}
+
+
+.navigationCheckbox:checked~.navigationBg {
+  transform: scale(80);
+}
+
+.navigationCheckbox:checked~.nav .navigationListe {
+  display: block;
+}
+
+
+.navigationCheckbox:checked~.nav {
+  opacity: 1;
+  width: 100%;
+  transform: translateX(0);
+}
+
+
+.navigationCheckbox:checked+.navigationBtn .navigationIcon {
+  background-color: black;
+}
+
+.navigationCheckbox:checked+.navigationBtn .navigationIcon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.navigationCheckbox:checked+.navigationBtn .navigationIcon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+h1 {
+  color: var(--ecriture);
+  font-size: 30px;
+  text-align: center;
+}
+
+h2 {
+  color:var(--ecriture2);
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  color: #f9ba25;
+}
+
+h4 {
+  color: #f9b031;
+  text-decoration: underline;
+}
+
+hr {
+  padding: 1px;
+  background: #894e00;
+  border: 0;
+}
+
+#conteneur {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  color: gold;
+}
+.element {
+  width: 33.33%;
+}
+
+.Malone {
+  color: gold;
+  font-size: 20px;
+  text-align: left;
+}
+
+#Era {
+  display: none;
+}
+
+.Evan {
+  color: #f4dc42;
+  font-size: 20px;
+  text-align: left;
+}
+
+.evan {
+  text-decoration: underline;
+  color: red;
+}
+
+.meg {
+  color: gold;
+  text-align: center;
+  font-size: 12px;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+@keyframes AutoSlide {
+  0% {
+    left: 0px;
+  }
+
+  10% {
+    left: -75px;
+  }
+
+  20% {
+    left: -150px;
+  }
+
+  35% {
+    left: -150px;
+  }
+
+  50% {
+    left: -300px;
+  }
+
+  65% {
+    left: -300px;
+  }
+
+  75% {
+    left: -450px;
+
+  }
+
+  85% {
+    left: -450px;
+  }
+
+  95% {
+    left: -650px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+#slideshow {
+  position: relative;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  top: 30%;
+  left: 25%;
+  right: center auto;
+}
+
+#sContent li {
+  display: inline;
+}
+
+#sContent {
+  position: absolute;
+  top: 50;
+  width: 2800px;
+  height: auto;
+  padding: 6vh;
+
+
+
+  animation-name: AutoSlide;
+  animation-direction: alternate-reverse;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.test {
+  text-align: center;
+}
+
+footer {
+  color: gold;
+  text-align: center;
+  font-size: 15px;
+  background-color: green;
+}
+
+@font-face {
+  font-family: 'banksiaregular';
+  src: url('banksia-webfont.eot');
+  src: url('banksia-webfont.eot?#iefix') format('embedded-opentype'),
+    url('banksia-webfont.woff2') format('woff2'),
+    url('banksia-webfont.woff') format('woff'),
+    url('banksia-webfont.ttf') format('truetype'),
+    url('banksia-webfont.svg#banksiaregular') format('svg');
+  font-weight: normal;
+  font-style: italic;
+
+}
+
+* {
+  font-family: 'banksia-webfont', Arial, serif;
+}
+
+a:hover {
+  color: rgb(234, 156, 46);
+  font-weight: normal;
+  font-family: 'banksia-webfont', Arial, serif;
+}
+
+a:active {
+  font-family: 'banksia-webfont', Arial, serif;
+  color: rgb(237, 186, 2);
+}
+
+.jp {
+  text-align: center;
+}
+
+footer {
+  color: gold;
+  text-align: center;
+  font-size: 15px;
+  background-color: green;
+}
+
+
+
+#mobile {
+  display: none;
+}
+
+
+
+/*Partie responsive design petit ecran*/
+
+@media screen and (max-width:980px) {
+  #mobile {
+    display: block;
+  }
+
+  #slideshow {
+    display: none;
+  }
+
+  .navigationCheckbox {
+    display: none;
+  }
+
+  .navigationBg {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: -1rem;
+    right: 8.5rem;
+    background-image: radial-gradient(black, black);
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+
+  .navigationBtn {
+    background-color: black;
+    height: 4rem;
+    width: 4rem;
+    position: fixed;
+    top: -2rem;
+    right: 9.5rem;
+    border-radius: 50%;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+  }
+
+
+  .navigationIcon {
+    position: relative;
+    margin-top: 3.5rem;
+    width: 3rem;
+    height: 2px;
+    background-color: green;
+    display: inline-block;
+  }
+
+  .navigationIcon::before,
+  .navigationIcon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: gold;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s;
+  }
+
+  .navigationIcon::before {
+    top: -.8rem;
+  }
+
+  .navigationIcon::after {
+    top: .8rem;
+  }
+
+
+  .nav {
+    height: 100vh;
+    position: fixed;
+    width: 0;
+    opacity: 0;
+    z-index: 1500;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+
+  .navigationListe {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+
+  }
+
+
+  .liens {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 100;
+    color: gold;
+    text-decoration: none;
+
+
+  }
+
+
+  .navigationCheckbox:checked~.navigationBg {
+    transform: scale(80);
+  }
+
+
+  .navigationCheckbox:checked~.nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+
+  .navigationCheckbox:checked+.navigationBtn .navigationIcon {
+    background-color: black;
+
+  }
+
+  .navigationCheckbox:checked+.navigationBtn .navigationIcon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  .navigationCheckbox:checked+.navigationBtn .navigationIcon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+
+
+}
+
+
+/*Partie responsive design grand ecran*/
+
+@media screen and (min-width: 1580px) {
+  @keyframes AutoSlide {
+    0% {
+      left: 0px;
+    }
+
+    10% {
+      left: -75px;
+    }
+
+    20% {
+      left: -150px;
+    }
+
+    35% {
+      left: -150px;
+    }
+
+    50% {
+      left: -300px;
+    }
+
+    65% {
+      left: -300px;
+    }
+
+    75% {
+      left: -450px;
+
+    }
+
+    85% {
+      left: -450px;
+    }
+
+    95% {
+      left: -650px;
+    }
+
+    100% {
+      left: 0px;
+    }
+  }
+
+  #slideshow {
+    position: relative;
+    width: 700px;
+    height: 600px;
+    overflow: hidden;
+    top: 30%;
+    left: 30%;
+    right: 30%;
+  }
+
+  #sContent li {
+    display: inline;
+  }
+
+  #sContent {
+    position: absolute;
+    top: 50;
+    width: 2800px;
+    height: auto;
+    padding: 6vh;
+
+
+
+    animation-name: AutoSlide;
+    animation-direction: alternate-reverse;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+#Era {
+  color: gold;
+}
